@@ -1,165 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediCare Hospital</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediCare Dashboard</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        *{
-            margin:0;
-            padding:0;
-            box-sizing:border-box;
-            font-family:'Poppins',sans-serif;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-        body{
-            background:#f5f9ff;
-            color:#222;
-        }
+body{
+    display:flex;
+    background:#f5f7fb;
+}
 
-        nav{
-            background:white;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:20px 8%;
-            box-shadow:0 2px 10px rgba(0,0,0,0.05);
-        }
+.sidebar{
+    width:250px;
+    height:100vh;
+    background:#0f172a;
+    color:white;
+    padding:25px;
+    position:fixed;
+}
 
-        .logo{
-            font-size:24px;
-            font-weight:700;
-            color:#0066cc;
-        }
+.sidebar h2{
+    margin-bottom:40px;
+}
 
-        .nav-links a{
-            text-decoration:none;
-            color:#333;
-            margin-left:20px;
-            font-weight:500;
-        }
+.sidebar a{
+    display:block;
+    color:white;
+    text-decoration:none;
+    margin:18px 0;
+}
 
-        .hero{
-            min-height:80vh;
-            display:flex;
-            justify-content:center;
-            align-items:center;
-            text-align:center;
-            padding:40px;
-        }
+.main{
+    margin-left:250px;
+    width:100%;
+    padding:30px;
+}
 
-        .hero-content h1{
-            font-size:3rem;
-            margin-bottom:20px;
-        }
+.header{
+    margin-bottom:30px;
+}
 
-        .hero-content p{
-            font-size:1.1rem;
-            max-width:700px;
-            margin:auto;
-            color:#555;
-        }
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
 
-        .btn{
-            display:inline-block;
-            margin-top:30px;
-            background:#0066cc;
-            color:white;
-            padding:14px 28px;
-            border-radius:8px;
-            text-decoration:none;
-        }
+.card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
 
-        .features{
-            padding:80px 8%;
-            background:white;
-        }
+.card h3{
+    color:#666;
+    margin-bottom:10px;
+}
 
-        .features h2{
-            text-align:center;
-            margin-bottom:40px;
-        }
+.card p{
+    font-size:32px;
+    font-weight:700;
+    color:#2563eb;
+}
 
-        .cards{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-            gap:20px;
-        }
+.table-container{
+    background:white;
+    margin-top:30px;
+    border-radius:12px;
+    padding:20px;
+    overflow-x:auto;
+}
 
-        .card{
-            background:#f8fbff;
-            padding:25px;
-            border-radius:12px;
-        }
+table{
+    width:100%;
+    border-collapse:collapse;
+}
 
-        footer{
-            text-align:center;
-            padding:20px;
-            background:#0066cc;
-            color:white;
-        }
-    </style>
+th,td{
+    padding:14px;
+    text-align:left;
+    border-bottom:1px solid #eee;
+}
+
+th{
+    background:#f8fafc;
+}
+</style>
 </head>
 <body>
 
-<nav>
-    <div class="logo">MediCare</div>
+<div class="sidebar">
+    <h2>MediCare HMS</h2>
 
-    <div class="nav-links">
-        <a href="#">Home</a>
-        <a href="#">Doctors</a>
-        <a href="#">Departments</a>
-        <a href="#">Appointments</a>
-        <a href="#">Contact</a>
+    <a href="#">Dashboard</a>
+    <a href="#">Patients</a>
+    <a href="#">Doctors</a>
+    <a href="#">Appointments</a>
+    <a href="#">Departments</a>
+    <a href="#">Billing</a>
+</div>
+
+<div class="main">
+
+    <div class="header">
+        <h1>Hospital Dashboard</h1>
+        <p>Welcome back, Administrator</p>
     </div>
-</nav>
-
-<section class="hero">
-    <div class="hero-content">
-        <h1>Quality Healthcare For Everyone</h1>
-
-        <p>
-            MediCare Hospital provides comprehensive healthcare services,
-            experienced doctors, and modern medical facilities to ensure
-            the best care for every patient.
-        </p>
-
-        <a href="#" class="btn">Book Appointment</a>
-    </div>
-</section>
-
-<section class="features">
-    <h2>Our Services</h2>
 
     <div class="cards">
+
         <div class="card">
-            <h3>Emergency Care</h3>
-            <p>24/7 emergency medical support.</p>
+            <h3>Total Patients</h3>
+            <p>1,248</p>
         </div>
 
         <div class="card">
-            <h3>Specialist Doctors</h3>
-            <p>Experienced doctors across multiple departments.</p>
+            <h3>Total Doctors</h3>
+            <p>42</p>
         </div>
 
         <div class="card">
-            <h3>Laboratory</h3>
-            <p>Fast and accurate diagnostic services.</p>
+            <h3>Appointments Today</h3>
+            <p>86</p>
         </div>
 
         <div class="card">
-            <h3>Appointments</h3>
-            <p>Simple online appointment booking.</p>
+            <h3>Available Beds</h3>
+            <p>23</p>
         </div>
+
     </div>
-</section>
 
-<footer>
-    © 2026 MediCare Hospital. All Rights Reserved.
-</footer>
+    <div class="table-container">
+        <h2>Recent Appointments</h2>
+
+        <table>
+            <tr>
+                <th>Patient</th>
+                <th>Doctor</th>
+                <th>Department</th>
+                <th>Date</th>
+            </tr>
+
+            <tr>
+                <td>Rahul Kumar</td>
+                <td>Dr. Sharma</td>
+                <td>Cardiology</td>
+                <td>05 Jun 2026</td>
+            </tr>
+
+            <tr>
+                <td>Anjali Nair</td>
+                <td>Dr. Thomas</td>
+                <td>Neurology</td>
+                <td>05 Jun 2026</td>
+            </tr>
+
+            <tr>
+                <td>Arun Das</td>
+                <td>Dr. Joseph</td>
+                <td>Orthopedics</td>
+                <td>05 Jun 2026</td>
+            </tr>
+
+        </table>
+    </div>
+
+</div>
 
 </body>
 </html>
